@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6c453"/>
+      <stop offset="50%" stop-color="#f29545"/>
+      <stop offset="100%" stop-color="#c95b3a"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8d6"/>
+      <stop offset="60%" stop-color="#ffe082"/>
+      <stop offset="100%" stop-color="#ffe082" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="1400" fill="url(#bg)"/>
+  <circle cx="700" cy="540" r="320" fill="url(#sun)"/>
+  <circle cx="700" cy="540" r="180" fill="#fff8d6"/>
+  <text x="700" y="1010" text-anchor="middle" font-family="Georgia, serif" font-size="120" font-weight="700" fill="#2b1810" letter-spacing="-2">Morning Brief</text>
+  <text x="700" y="1110" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="48" fill="#2b1810" opacity="0.75" letter-spacing="6">SAGEE'S DAILY</text>
+</svg>
