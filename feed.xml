@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sagee&#x27;s Morning Brief</title>
+    <link>https://sageenis.github.io/morning-brief/</link>
+    <atom:link href="https://sageenis.github.io/morning-brief/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <description>A personalized daily brief covering weather, markets, and the day ahead. Auto-generated every morning.</description>
+    <itunes:author>Sagee</itunes:author>
+    <itunes:summary>A personalized daily brief covering weather, markets, and the day ahead. Auto-generated every morning.</itunes:summary>
+    <itunes:image href="https://sageenis.github.io/morning-brief/cover.png"/>
+    <itunes:category text="News"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>Sagee</itunes:name>
+      <itunes:email>sageenis@gmail.com</itunes:email>
+    </itunes:owner>
+    <lastBuildDate>Mon, 25 May 2026 12:51:44 +0000</lastBuildDate>
+    <item>
+      <title>Monday, May 25, 2026</title>
+      <description>Tel Aviv weather, Friday&#x27;s market close, and your calendar for the day.</description>
+      <itunes:summary>Tel Aviv weather, Friday&#x27;s market close, and your calendar for the day.</itunes:summary>
+      <pubDate>Mon, 25 May 2026 07:00:00 +0300</pubDate>
+      <enclosure url="https://sageenis.github.io/morning-brief/episodes/2026-05-25.mp3" length="940320" type="audio/mpeg"/>
+      <guid isPermaLink="false">brief-2026-05-25</guid>
+      <itunes:duration>00:03:55</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
