@@ -1,0 +1,39 @@
+name: Build episode
+
+on:
+  push:
+    paths:
+      - 'briefs/*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build episode (TTS + feed update)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python scripts/build_episode.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Morning Brief Bot"
+          git config user.email "bot@morning-brief.local"
+          git add episodes/ feed.xml || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Episode for $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes to commit."
+          fi
