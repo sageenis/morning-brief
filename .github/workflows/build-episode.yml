@@ -1,13 +1,21 @@
 name: Build episode
 
 on:
+  schedule:
+    # 04:00 UTC = 07:00 Israel summer time (IDT). In winter (IST), this fires at 06:00 local.
+    - cron: '0 4 * * *'
   push:
     paths:
       - 'briefs/*.json'
+      - 'scripts/**'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: build-episode
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -21,6 +29,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Gather today's brief data (idempotent — skips if file exists)
+        run: python scripts/gather_brief.py
+
       - name: Build episode (TTS + feed update)
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -28,12 +39,4 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "Morning Brief Bot"
-          git config user.email "bot@morning-brief.local"
-          git add episodes/ feed.xml || true
-          if ! git diff --staged --quiet; then
-            git commit -m "Episode for $(date -u +%Y-%m-%d)"
-            git push
-          else
-            echo "No changes to commit."
-          fi
+          git
