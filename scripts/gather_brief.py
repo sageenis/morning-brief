@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""
+""" # rev: debug
 Gather data for today's morning brief from free public APIs.
 
 Writes: briefs/YYYY-MM-DD.json  (in the form expected by build_episode.py)
 
 Runs in GitHub Actions — needs no API keys. All data sources are public and free.
-"""
+""" # rev: debug
 
 import json
 import random
